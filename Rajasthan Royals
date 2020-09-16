@@ -1,0 +1,28 @@
+#Players with Good Bowling Average and Batting Average
+
+SELECT batting.player,bowling.player,batting.BatAve,bowling.Ave
+from batting
+Inner join bowling
+ON batting.player=bowling.player
+WHERE bowling.Ave between 16 and 28
+group by batting.Player,bowling.Ave
+Having batting.BatAve>25
+
+#Player with more than 500 runs and 50 wickets
+
+SELECT batting.player,bowling.player,batting.Runs,bowling.Wkts
+from batting
+Inner join bowling
+ON batting.player=bowling.player
+WHERE bowling.Wkts>40
+group by batting.Player,bowling.Ave
+Having batting.Runs>500
+
+#Most no. of 4S
+
+SELECT player,4s
+FROM batting
+WHERE 4s>100
+order by 4s desc
+
+
